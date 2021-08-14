@@ -1,3 +1,10 @@
+<br><br>
+
+<%= current_user.id %><br>
 <%= current_user.name %><br>
 <%= current_user.email %><br>
 <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+
+<% if current_user != @user %>
+  <%= link_to 'chatを始める', chat_path(current_user.id)%>
+<% end %>
