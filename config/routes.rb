@@ -6,4 +6,7 @@ Rails.application.routes.draw do
 
   root 'homes#top'
   get 'mypage', to: 'homes#mypage'
+
+  get 'chat/:id' => 'chats#show', as: 'chat'
+  resources :chats, only: [:create]
 end
